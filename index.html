@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript|| Mini Project</title>
+
+    <link rel="stylesheet" href="./main.css">
+    
+</head>
+
+<body>
+    <div class="wrapper m-0 pt-32  w-screen h-screen bg-indigo-700 flex flex-col items-center">
+        <div class="container flex  justify-center items-center flex-col gap-4">
+            <!-- heading -->
+            <div class="heading text-yellow-400 font-serif text-3xl">
+                PASSWORD GENERATOR
+            </div>
+            <!--  output -->
+            <div class="output w-1/3 h-12 border-2 border-cyan-300  rounded-md flex justify-between bg-white shadow-lg shadow-red-500">
+                <div class="password w-11/12 p-3 text-2xl text-violet-500 "></div>
+                <div class="copy w-10 h-12 cursor-pointer"><img src="Images/copy.png" alt="copy"></div>
+            </div>
+
+            <!-- input -->
+
+            <div class="input flex flex-col gap-2 w-1/3 h-96 p-5 border-2 border-red-500 rounded-2xl bg-slate-100">
+
+                <!-- text and number -->
+                 <div class="number flex justify-between">
+                    <div class="text-amber-600 text-xl">Password length</div>
+                    <div class="PasswordLength text-2xl text-red-500">0</div>
+                 </div>
+
+                 <div class="seekbar bg-yellow-50 h-10">
+                    <input type="range" class="seek w-96 h-10 accent-yellow-400" min="0" max="20" value="0" oninput="updateValue(this.value)">
+                 </div>
+
+                 <div class="checkbox flex flex-col gap-2 ">
+                    <div class="flex  items-center gap-2">
+                        <input class=" includeUpperCase w-6 h-6 accent-yellow-600 rounded border-gray-400 focus:ring focus:ring-blue-300" type="checkbox"><span class="text-lg font-medium text-violet-700 ">  Include Uppercase Letters</span>
+                    </div>
+                    
+                    <div class="flex  items-center gap-2">
+                        <input class="includeLowerCase w-6 h-6 accent-yellow-600 rounded border-gray-400 focus:ring focus:ring-blue-300" type="checkbox"><span class="text-lg font-medium text-violet-700">  Include Lowercase Letters</span>
+                    </div>
+
+                    <div class="flex  items-center gap-2">
+                        <input class="includeNumber w-6 h-6 accent-yellow-600 rounded border-gray-400 focus:ring focus:ring-blue-300" type="checkbox"><span class="text-lg font-medium text-violet-700">  Include Numbers</span>
+                    </div>
+                   
+                    <div class="flex  items-center gap-2">
+                        <input class="includeSymbols w-6 h-6 accent-yellow-600 rounded border-gray-400 focus:ring focus:ring-blue-300" type="checkbox"><span class="text-lg font-medium text-violet-700">  Include Symbols</span>
+                    </div>
+                 </div>
+
+                 <div class="strength flex justify-between">
+                    <div class="st text-xl text-amber-600">Strength</div>
+                    <div class="coloring rounded-full bg-black shadow-orange-400 shadow-md w-8 h-8 "></div>
+
+                 </div>
+
+                 <div class="btn flex justify-center items-center ">
+                    <div
+                        class="generatebtn w-80 h-10 text-center text-xl text-white cursor-pointer bg-violet-700 shadow-red-600 shadow-md border-1 rounded-xl border-b-2 ">
+                        GENERATE PASSWORD
+                    </div>
+
+                 </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
