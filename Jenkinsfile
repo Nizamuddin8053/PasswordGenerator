@@ -23,11 +23,18 @@ pipeline {
             bat '''
               npx vercel pull --yes --environment=production --token=%VERCEL_TOKEN%
               npx vercel build --prod --token=%VERCEL_TOKEN%
-              npx vercel deploy --prebuilt --prod --token=%VERCEL_TOKEN%
+              npx vercel deploy --prod --token=%VERCEL_TOKEN% --confirm
             '''
            }
         }
+
+        stage('Debug Files') {
+          steps {
+            bat 'dir'
+          }
+        }
     }
+
 
     // post {
     //     success {
