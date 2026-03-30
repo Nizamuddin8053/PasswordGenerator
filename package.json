@@ -2,7 +2,6 @@
   "name": "js-mini-project",
   "version": "1.0.0",
   "description": "This is a password generator project using Javascript",
-  "main": "index.js",
   "dependencies": {
     "any-promise": "^1.3.0",
     "anymatch": "^3.1.3",
