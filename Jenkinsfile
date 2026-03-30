@@ -1,11 +1,12 @@
 pipeline {
     agent any
 
+    // nothing added 
+
     environment {
-        VERCEL_TOKEN = credentials('password-vercel-token')  
-        VERCEL_ORG_ID = 'team_4VQiAU8KshdeTVKo3JRqaU5a'
-        VERCEL_PROJECT_ID = 'prj_tKFdKTIDn2l8Wh71665YijL2580v'
+        VERCEL_TOKEN = credentials('password-vercel-token')
         EMAIL_TO = 'Nizamuddin8053@gmail.com'
+        
     }
 
     stages {
@@ -18,16 +19,14 @@ pipeline {
 
         stage('Install Vercel CLI') {
             steps {
-                sh 'npm install -g vercel'
+                bat 'npm install -g vercel'
             }
         }
 
         stage('Deploy to Vercel') {
             steps {
-                sh '''
-                vercel pull --yes --environment=production --token=$VERCEL_TOKEN
-                vercel build --prod --token=$VERCEL_TOKEN
-                vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+                bat '''
+                vercel --prod --token=%VERCEL_TOKEN% --confirm
                 '''
             }
         }
@@ -35,15 +34,15 @@ pipeline {
 
     post {
         success {
-            mail to: "${EMAIL_TO}",
+            mail to: "${env.EMAIL_TO}",
                  subject: "✅ Deployment Successful",
-                 body: "Your Password Generator app has been successfully deployed on Vercel."
+                 body: "Your Password Generator app deployed successfully 🚀"
         }
 
         failure {
-            mail to: "${EMAIL_TO}",
+            mail to: "${env.EMAIL_TO}",
                  subject: "❌ Deployment Failed",
-                 body: "Deployment failed. Please check Jenkins logs."
+                 body: "Deployment failed ❌ Check Jenkins logs."
         }
     }
 }
