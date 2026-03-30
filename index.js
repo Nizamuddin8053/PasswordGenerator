@@ -1,3 +1,4 @@
+console.log("js loaded ")
 
 let password = document.querySelector(".password");
 
