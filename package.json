@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "vite"
-  },
+ "scripts": {
+  "watch": "tailwindcss -i ./main.css -o ./dist/output.css --watch",
+  "build": "tailwindcss -i ./main.css -o ./dist/output.css"
+},
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thepranaygupta/html-tailwind-css-starter-pack.git"
@@ -21,7 +22,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.4",
+    "tailwindcss": "^3.4.19",
     "vite": "^4.0.4"
   }
 }
