@@ -1,5 +1,5 @@
 # PasswordGenerator
-This is a password generator project using Javascript which is obiviously a basic project but I used DevOps knowledge to deploy this project on Vecel . I created a CI/CD pipeline using github+webhook+Jenkins+ngrok 
+This is a password generator project using Javascript which is obviously a basic project but I used DevOps knowledge to deploy this project on Vecel . I created a CI/CD pipeline using github+webhook+Jenkins+ngrok(to convert local url to public url) 
 You can see Pipeline images................
 
 <img width="515" height="640" alt="CI_CD1" src="https://github.com/user-attachments/assets/31e2457d-8dd6-452f-a7ac-1672e82a6bca" />
