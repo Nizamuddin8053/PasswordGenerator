@@ -23,11 +23,13 @@ pipeline {
         }
 
         stage('Deploy to Vercel') {
-            steps {
-                bat '''
-                vercel --prod --token=%VERCEL_TOKEN% --confirm
-                '''
-            }
+          steps {
+            bat '''
+              vercel pull --yes --environment=production --token=%VERCEL_TOKEN%
+              vercel build --prod --token=%VERCEL_TOKEN%
+              vercel deploy --prebuilt --prod --token=%VERCEL_TOKEN%
+            '''
+          }
         }
     }
 
