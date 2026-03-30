@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         VERCEL_TOKEN = credentials('password-vercel-token')
-        EMAIL_TO = 'Nizamuddin8053@gmail.com'
+        // EMAIL_TO = 'Nizamuddin8053@gmail.com'
         
     }
 
@@ -29,17 +29,17 @@ pipeline {
         }
     }
 
-    post {
-        success {
-            mail to: "${env.EMAIL_TO}",
-                 subject: "✅ Deployment Successful",
-                 body: "Your Password Generator app deployed successfully 🚀"
-        }
+    // post {
+    //     success {
+    //         mail to: "${env.EMAIL_TO}",
+    //              subject: "✅ Deployment Successful",
+    //              body: "Your Password Generator app deployed successfully 🚀"
+    //     }
 
-        failure {
-            mail to: "${env.EMAIL_TO}",
-                 subject: "❌ Deployment Failed",
-                 body: "Deployment failed ❌ Check Jenkins logs."
-        }
-    }
+    //     failure {
+    //         mail to: "${env.EMAIL_TO}",
+    //              subject: "❌ Deployment Failed",
+    //              body: "Deployment failed ❌ Check Jenkins logs."
+    //     }
+    // }
 }
